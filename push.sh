@@ -22,4 +22,4 @@ git commit -m "$1"
 
 git push
 
-echo "==> Done! Open a Pull Request on GitHub to merge '$branch' into main."
+echo "==> Done! Changes pushed to branch '$branch'."
