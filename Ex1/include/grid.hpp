@@ -32,10 +32,10 @@ class Grid3D {
         std::vector<RadialBin> compute_radial_profile(size_t num_bins, double r_min, double r_max) const;
 
         // export radial profile to CSV file
-        void export_radial_profile(const std::string& filename, const std::vector<RadialBin>& profile) const;
+        void export_profile_to_csv(const std::string& filename, const std::vector<RadialBin>& profile) const;
 
         // helper: cell linear index from (i, j, k)
-        inline size_t cell_index(size_t i, size_t j, size_t k) const {
+        inline size_t index(size_t i, size_t j, size_t k) const {
             return i * n_cells_ * n_cells_ + j * n_cells_ + k;
         }
 

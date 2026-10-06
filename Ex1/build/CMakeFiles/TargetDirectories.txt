@@ -1,0 +1,3 @@
+/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/galaxy_grid.dir
+/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/edit_cache.dir
+/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/rebuild_cache.dir

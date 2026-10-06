@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -Wall -Wextra -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/galaxy_grid.dir/src/grid.cpp.o CMakeFiles/galaxy_grid.dir/src/main.cpp.o CMakeFiles/galaxy_grid.dir/src/sampler.cpp.o -o galaxy_grid
