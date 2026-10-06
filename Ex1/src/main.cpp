@@ -11,7 +11,7 @@ int main() {
 
     const size_t num_particles = 1'000'000;
     const double box_size = 2.0 * Constants::R_max; // 500 kpc
-    const size_t num_radial_bins = 60;
+    const size_t num_radial_bins = 40;
 
     std::cout << "=== Galaxy Density Profile Sampling ===" << std::endl;
     std::cout << "Central Density rho_0: " << Constants::rho_0 << " M_sun / kpc^3" << std::endl;

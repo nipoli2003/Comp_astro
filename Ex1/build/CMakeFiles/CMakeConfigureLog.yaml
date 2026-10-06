@@ -1623,3 +1623,213 @@ events:
         
       exitCode: 2
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:334 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:642 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx"
+      binary: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3 -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_65513/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_65513.dir/build.make CMakeFiles/cmTC_65513.dir/build
+        gmake[1]: Entering directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx'
+        Building CXX object CMakeFiles/cmTC_65513.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -O3 -Wall -Wextra -Xclang -fopenmp -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_65513.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_65513.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_65513.dir/OpenMPTryFlag.cpp.o -c /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx/OpenMPTryFlag.cpp
+        /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_65513.dir/build.make:82: CMakeFiles/cmTC_65513.dir/OpenMPTryFlag.cpp.o] Error 1
+        gmake[1]: Leaving directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-YXm3vx'
+        gmake: *** [Makefile:134: cmTC_65513/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:334 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:642 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY"
+      binary: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3 -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_bb4fb/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_bb4fb.dir/build.make CMakeFiles/cmTC_bb4fb.dir/build
+        gmake[1]: Entering directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY'
+        Building CXX object CMakeFiles/cmTC_bb4fb.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -O3 -Wall -Wextra -Xclang -fopenmp -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_bb4fb.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_bb4fb.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_bb4fb.dir/OpenMPTryFlag.cpp.o -c /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY/OpenMPTryFlag.cpp
+        /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_bb4fb.dir/build.make:82: CMakeFiles/cmTC_bb4fb.dir/OpenMPTryFlag.cpp.o] Error 1
+        gmake[1]: Leaving directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-sq6ynY'
+        gmake: *** [Makefile:134: cmTC_bb4fb/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:334 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:642 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T"
+      binary: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3 -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_0abfa/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_0abfa.dir/build.make CMakeFiles/cmTC_0abfa.dir/build
+        gmake[1]: Entering directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T'
+        Building CXX object CMakeFiles/cmTC_0abfa.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -O3 -Wall -Wextra -Xclang -fopenmp -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_0abfa.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_0abfa.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_0abfa.dir/OpenMPTryFlag.cpp.o -c /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T/OpenMPTryFlag.cpp
+        /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_0abfa.dir/build.make:82: CMakeFiles/cmTC_0abfa.dir/OpenMPTryFlag.cpp.o] Error 1
+        gmake[1]: Leaving directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-QjCa2T'
+        gmake: *** [Makefile:134: cmTC_0abfa/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:334 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:642 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W"
+      binary: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3 -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_65ae3/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_65ae3.dir/build.make CMakeFiles/cmTC_65ae3.dir/build
+        gmake[1]: Entering directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W'
+        Building CXX object CMakeFiles/cmTC_65ae3.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -O3 -Wall -Wextra -Xclang -fopenmp -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_65ae3.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_65ae3.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_65ae3.dir/OpenMPTryFlag.cpp.o -c /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W/OpenMPTryFlag.cpp
+        /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_65ae3.dir/build.make:82: CMakeFiles/cmTC_65ae3.dir/OpenMPTryFlag.cpp.o] Error 1
+        gmake[1]: Leaving directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-bs7x9W'
+        gmake: *** [Makefile:134: cmTC_65ae3/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:334 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:642 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx"
+      binary: "/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -O3 -Wall -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_ef953/fast
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_ef953.dir/build.make CMakeFiles/cmTC_ef953.dir/build
+        gmake[1]: Entering directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx'
+        Building CXX object CMakeFiles/cmTC_ef953.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -O3 -Wall -Wextra -Xclang -fopenmp -std=gnu++17 -arch arm64 -MD -MT CMakeFiles/cmTC_ef953.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_ef953.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_ef953.dir/OpenMPTryFlag.cpp.o -c /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx/OpenMPTryFlag.cpp
+        /Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        gmake[1]: *** [CMakeFiles/cmTC_ef953.dir/build.make:82: CMakeFiles/cmTC_ef953.dir/OpenMPTryFlag.cpp.o] Error 1
+        gmake[1]: Leaving directory '/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles/CMakeScratch/TryCompile-iPieZx'
+        gmake: *** [Makefile:134: cmTC_ef953/fast] Error 2
+        
+      exitCode: 2
+...
