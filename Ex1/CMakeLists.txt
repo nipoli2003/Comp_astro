@@ -1,25 +1,28 @@
 cmake_minimum_required(VERSION 3.16)
-project(Ex1 CXX)
+project(CompAstro_Exercise01 CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Optimization flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wall -Wextra")
 
-# Optional OpenMP support on macOS
-find_package(OpenMP)
-if(OpenMP_CXX_FOUND)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+# Point CMake to Homebrew's libomp on macOS
+if(APPLE)
+    if(EXISTS "/opt/homebrew/opt/libomp")
+        set(OpenMP_ROOT "/opt/homebrew/opt/libomp")
+    elseif(EXISTS "/usr/local/opt/libomp")
+        set(OpenMP_ROOT "/usr/local/opt/libomp")
+    endif()
 endif()
 
+find_package(OpenMP)
+
 include_directories(include)
-
-# Source files (main will link them)
 file(GLOB SOURCES "src/*.cpp")
-
 add_executable(galaxy_grid ${SOURCES})
 
 if(OpenMP_CXX_FOUND)
     target_link_libraries(galaxy_grid PRIVATE OpenMP::OpenMP_CXX)
+    message(STATUS "OpenMP found! Compiling with multithreading support.")
+else()
+    message(STATUS "OpenMP NOT found. Compiling single-threaded.")
 endif()

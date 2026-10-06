@@ -127,6 +127,7 @@ galaxy_grid: CMakeFiles/galaxy_grid.dir/src/grid.cpp.o
 galaxy_grid: CMakeFiles/galaxy_grid.dir/src/main.cpp.o
 galaxy_grid: CMakeFiles/galaxy_grid.dir/src/sampler.cpp.o
 galaxy_grid: CMakeFiles/galaxy_grid.dir/build.make
+galaxy_grid: /opt/homebrew/opt/libomp/lib/libomp.dylib
 galaxy_grid: CMakeFiles/galaxy_grid.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable galaxy_grid"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/galaxy_grid.dir/link.txt --verbose=$(VERBOSE)

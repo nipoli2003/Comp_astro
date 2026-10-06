@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/include
+CXX_INCLUDES = -I/Users/nipoli/university-archive/public/downloads/Comp_astro/git/Comp_astro/Ex1/include -isystem /opt/homebrew/opt/libomp/include
 
-CXX_FLAGSarm64 =  -O3 -Wall -Wextra -std=gnu++17 -arch arm64
+CXX_FLAGSarm64 =  -O3 -Wall -Wextra -std=gnu++17 -arch arm64 -Xclang -fopenmp
 
-CXX_FLAGS =  -O3 -Wall -Wextra -std=gnu++17 -arch arm64
+CXX_FLAGS =  -O3 -Wall -Wextra -std=gnu++17 -arch arm64 -Xclang -fopenmp
 
