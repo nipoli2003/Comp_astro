@@ -22,6 +22,14 @@ int main() {
     double m_p = Sampler::get_particle_mass(num_particles);
     std::cout << "Particle mass: " << m_p << " M_sun" << std::endl;
 
+    // --- SANITY CHECK ON TASK 1 ---
+    std::cout << "Running particle sanity check..." << std::endl;
+    auto particle_profile = Sampler::compute_particle_profile(
+        particles, m_p, num_radial_bins, Constants::r_min, Constants::R_max
+    );
+    Sampler::export_particle_profile_to_csv("output/profile_particles_raw.csv", particle_profile);
+    std::cout << "Exported particle sanity check to output/profile_particles_raw.csv" << std::endl;
+
     // Grid resolutions to test: 100^3 and 200^3
     std::vector<size_t> grid_sizes = {100, 200};
 

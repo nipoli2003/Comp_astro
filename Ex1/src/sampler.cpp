@@ -2,6 +2,8 @@
 #include "constants.hpp"
 #include <random>
 #include <cmath>
+#include <fstream>
+#include <iomanip>
 
 double Sampler::get_total_mass() {
     return Constants::cumulative_mass(Constants::R_max);
@@ -54,4 +56,80 @@ std::vector<Particle> Sampler::generate_particles(size_t num_particles, unsigned
     }
 
     return particles;
+}
+
+std::vector<Sampler::ParticleRadialBin> Sampler::compute_particle_profile(
+    const std::vector<Particle>& particles,
+    double particle_mass,
+    size_t num_bins,
+    double r_min,
+    double r_max) {
+
+    std::vector<ParticleRadialBin> profile(num_bins);
+    std::vector<size_t> counts(num_bins, 0);
+
+    double log_min = std::log10(r_min);
+    double log_max = std::log10(r_max);
+    double d_log_r = (log_max - log_min) / static_cast<double>(num_bins);
+
+    // 1. Bin edges and geometry
+    std::vector<double> r_edges(num_bins + 1);
+    for (size_t b = 0; b <= num_bins; ++b) {
+        r_edges[b] = std::pow(10.0, log_min + b * d_log_r);
+    }
+
+    for (size_t b = 0; b < num_bins; ++b) {
+        profile[b].r_low = r_edges[b];
+        profile[b].r_high = r_edges[b + 1];
+        profile[b].r_center = std::sqrt(r_edges[b] * r_edges[b + 1]);
+
+        // Exact mass enclosed in this shell
+        double dM_exact = Constants::cumulative_mass(r_edges[b + 1]) - Constants::cumulative_mass(r_edges[b]);
+        double shell_volume = (4.0 / 3.0) * M_PI * (std::pow(r_edges[b + 1], 3) - std::pow(r_edges[b], 3));
+        
+        // Exact average density across the shell volume
+        profile[b].rho_exact_shell = dM_exact / shell_volume;
+    }
+
+    // 2. Count particles in shells
+    for (const auto& p : particles) {
+        double r = std::sqrt(p.x * p.x + p.y * p.y + p.z * p.z);
+        if (r >= r_min && r < r_max) {
+            size_t b = static_cast<size_t>((std::log10(r) - log_min) / d_log_r);
+            if (b < num_bins) {
+                counts[b]++;
+            }
+        }
+    }
+
+    // 3. Assign measured densities
+    for (size_t b = 0; b < num_bins; ++b) {
+        double r1 = profile[b].r_low;
+        double r2 = profile[b].r_high;
+        double shell_volume = (4.0 / 3.0) * M_PI * (r2 * r2 * r2 - r1 * r1 * r1);
+
+        profile[b].count = counts[b];
+        profile[b].density = (counts[b] * particle_mass) / shell_volume;
+    }
+
+    return profile;
+}
+
+void Sampler::export_particle_profile_to_csv(
+    const std::string& filename,
+    const std::vector<ParticleRadialBin>& profile) {
+
+    std::ofstream out(filename);
+    out << std::scientific << std::setprecision(8);
+    out << "r_low,r_high,r_center,rho_measured,rho_exact_shell,count\n";
+    for (const auto& bin : profile) {
+        if (bin.count > 0) {
+            out << bin.r_low << ","
+                << bin.r_high << ","
+                << bin.r_center << ","
+                << bin.density << ","
+                << bin.rho_exact_shell << ","
+                << bin.count << "\n";
+        }
+    }
 }
