@@ -21,6 +21,7 @@ file(GLOB SOURCES "src/*.cpp")
 add_executable(galaxy_grid ${SOURCES})
 
 if(OpenMP_CXX_FOUND)
+    # OpenMP::OpenMP_CXX automatically attaches compile flags, includes, and linker flags
     target_link_libraries(galaxy_grid PRIVATE OpenMP::OpenMP_CXX)
     message(STATUS "OpenMP found! Compiling with multithreading support.")
 else()

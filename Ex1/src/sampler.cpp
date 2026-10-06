@@ -5,6 +5,10 @@
 #include <fstream>
 #include <iomanip>
 
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
 double Sampler::get_total_mass() {
     return Constants::cumulative_mass(Constants::R_max);
 }
@@ -33,28 +37,36 @@ double Sampler::sample_radius(double u, double total_mass) {
 
 std::vector<Particle> Sampler::generate_particles(size_t num_particles, unsigned int seed) {
     std::vector<Particle> particles(num_particles);
-    std::mt19937_64 rng(seed);
-    std::uniform_real_distribution<double> dist_u(0.0, 1.0);
-
     double total_mass = get_total_mass();
 
-    for(size_t i = 0; i < num_particles; i++){
-        // 1. Sample radial distance
-        double u_r = dist_u(rng);
-        double r = sample_radius(u_r, total_mass);
+    #pragma omp parallel
+    {
+        int tid = 0;
+#ifdef _OPENMP
+        tid = omp_get_thread_num();
+#endif
+        // Thread-private random generator seeded differently per thread
+        std::mt19937_64 rng(seed + tid);
+        std::uniform_real_distribution<double> dist_u(0.0, 1.0);
 
-        // 2. Sample isotropic angles
-        // cos(theta) is uniform in [-1, 1], phi is uniform in [0, 2*pi)
-        double cos_theta = 2.0 * dist_u(rng) - 1.0;
-        double sin_theta = std::sqrt(std::max(0.0, 1.0 - cos_theta * cos_theta));
-        double phi = 2.0 * M_PI * dist_u(rng);
+        #pragma omp for
+        for (size_t i = 0; i < num_particles; ++i) {
+            // 1. Sample radial distance
+            double u_r = dist_u(rng);
+            double r = sample_radius(u_r, total_mass);
 
-        // 3. Cartesian positions
-        particles[i].x = r * sin_theta * std::cos(phi);
-        particles[i].y = r * sin_theta * std::sin(phi);
-        particles[i].z = r * cos_theta;
+            // 2. Sample isotropic angles
+            // cos(theta) is uniform in [-1, 1], phi is uniform in [0, 2*pi)
+            double cos_theta = 2.0 * dist_u(rng) - 1.0;
+            double sin_theta = std::sqrt(std::max(0.0, 1.0 - cos_theta * cos_theta));
+            double phi = 2.0 * M_PI * dist_u(rng);
+
+            // 3. Cartesian positions
+            particles[i].x = r * sin_theta * std::cos(phi);
+            particles[i].y = r * sin_theta * std::sin(phi);
+            particles[i].z = r * cos_theta;
+        }
     }
-
     return particles;
 }
 
